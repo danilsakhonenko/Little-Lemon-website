@@ -2,14 +2,14 @@ import React from 'react'
 
 function Navigation() {
   return (
-    <nav className='MainNav'>
+    <nav id='main-nav'>
         <ul>
-            <li><a href='#'>Home</a></li>
-            <li><a href='#'>About</a></li>
-            <li><a href='#'>Menu</a></li>
-            <li><a href='#'>Reservations</a></li>
-            <li><a href='#'>Order Online</a></li>
-            <li><a href='#'>Login</a></li>
+            <li><a className='title-text' href='#'>Home</a></li>
+            <li><a className='title-text' href='#'>About</a></li>
+            <li><a className='title-text' href='#'>Menu</a></li>
+            <li><a className='title-text' href='#'>Reservations</a></li>
+            <li><a className='title-text' href='#'>Order Online</a></li>
+            <li><a className='title-text' href='#'>Login</a></li>
         </ul>
     </nav>
   )
