@@ -40,9 +40,9 @@ h2{
   white-space: nowrap;
 }
 .lead-text{
+  text-decoration: none;
   font-family:var(--font-karla);
   color: black;
-  text-decoration: none;
   font-weight: 500;
   font-size: 18pt;
 }
@@ -71,13 +71,15 @@ h2{
   justify-self: end;
 }
 .action-button{
+  display: flex;
+  border-width:0 ;
   border-radius: var(--border-rad);
-  border-width: 0;
   background-color: var(--yellow);
   height: 64px;
-  width: auto;
   padding: 0 32px;
   min-width: fit-content;
+  justify-content: center;
+  align-items: center;
   white-space: nowrap;
 }
 .container{
@@ -123,7 +125,7 @@ ul {
   justify-self: end;
   object-fit: cover;
 }
-main{
+#main{
   grid-area: main;
   display: grid;
   grid-template-rows: auto auto auto auto;
@@ -276,6 +278,12 @@ footer.container{
 }
 footer > section{
   grid-column: span 2;
+}
+/*==================================================================*/
+.form{
+  display: flex;
+  flex-direction: column;
+  grid-column: 3/ span 8;
 }
 
 @media only screen and (max-width: 1199px) {

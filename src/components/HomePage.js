@@ -7,23 +7,22 @@ import chefPhoto from "../restaurant chef.jpg";
 import CardsContainer from "./CardsContainer";
 import SpecialsList from './SpecialsList';
 import ReviewsList from "./ReviewsList";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   let lorem =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Mauris porta, magna et aliquet tempor, tortor mi iaculis enim, ac tempor ligula nulla tincidunt libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque efficitur posuere.";
   return (
-    <main>
+    <main id='main'>
       <section id="hero-section" className="container">
         <div className="text-block">
           <h1>Little Lemon</h1>
           <h2 className="white">Chicago</h2>
           <p className="lead-text white">{lorem}</p>
         </div>
-        <ActionButton
-          link="/booking"
-          label="Reserve a table"
-          id="reserve-button"
-        />
+        <Link to='/booking' id='reserve-button' className="action-button lead-text">
+          Reserve a table
+        </Link>
         <div id="white-space"></div>
         <img
           src={PreviewPhoto}
@@ -34,7 +33,9 @@ function HomePage() {
       </section>
       <section id="highlights" className="container">
         <h2>This weeks specials!</h2>
-        <ActionButton label="Online Menu" id="menu-button" />
+        <Link to='/' id='menu-button' className="action-button lead-text">
+          Online Menu
+        </Link>
         <CardsContainer>
           <SpecialsList/>
         </CardsContainer>

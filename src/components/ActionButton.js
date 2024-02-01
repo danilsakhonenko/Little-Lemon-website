@@ -1,14 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function ActionButton(props) {
   return (
-    <button onClick={props.onClick} className='action-button' id={props.id}>
-      <Link to={props.link} className='lead-text'>
+      <button
+        className="action-button lead-text" type={props.type} id="props.id">
         {props.label}
-      </Link>
-    </button>
-  )
+      </button>
+  );
 }
 
-export default ActionButton
+export default ActionButton;
