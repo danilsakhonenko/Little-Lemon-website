@@ -41,6 +41,8 @@ h2{
 }
 .lead-text{
   font-family:var(--font-karla);
+  color: black;
+  text-decoration: none;
   font-weight: 500;
   font-size: 18pt;
 }
@@ -54,6 +56,12 @@ h2{
   text-decoration: none;
   font-weight: 700;
   font-size: 18pt;
+}
+.link:hover{
+  color: var(--yellow);
+}
+.link:active{
+  color: #ee9972;
 }
 .white{
   color: white;
@@ -151,20 +159,41 @@ main{
 #menu-button{
   grid-column: 9 / span 2;
 }
-.card-swipe{
+.cards-container{
   display: flex;
   height: 100%;
-  column-gap: 40px;
+  column-gap: 3.5%;
   grid-column: 3/ span 8;
-  justify-content: center;
   align-items: center;
+  overflow-x: auto;
+  padding-bottom: 40px;
+  scrollbar-color: darkgray lightgray;
+  scrollbar-width: thin; 
 }
-.dish-card{
-  height: 100%;
-  width: 100%;
+.cards-container::-webkit-scrollbar {
+  width: 10px;
+}
+.cards-container::-webkit-scrollbar-thumb {
+  background-color: var(--yellow);
+  border-radius: var(--border-rad);
+}
+.cards-container::-webkit-scrollbar-track {
+  border-radius: var(--border-rad);
+  background-color: var(--grey);
+}
+.cards-container::-moz-scrollbar-thumb {
+  background-color: var(--yellow);
+  border-radius: var(--border-rad);
+}
+.cards-container::-moz-scrollbar-track {
+  border-radius: var(--border-rad);
+  background-color: var(--grey);
+}
+.card{
+  height: 98%;
   background-color:var(--grey);
   border-radius: var(--border-rad);
-  max-width: 500px;
+  flex: 0 0 31%;
 }
 .dish-image{
   height: 45%;
@@ -204,8 +233,6 @@ main{
   grid-template-columns: auto 1fr;
   padding: 20px;
   gap: 16px;
-  background-color: var(--grey);
-  border-radius: var(--border-rad);
 }
 .profile-image{
   width: 100px;
@@ -291,10 +318,12 @@ footer > section{
     grid-row: 3/ span 1;
     grid-column: 2 / span 2;
   }
-  .card-swipe{
-    flex-direction: column;
-    row-gap: 40px;
+  .cards-container{
     grid-column: 2/ span 2;
+    column-gap: 4%;
+  }
+  .card{
+    flex: 0 0  48%;
   }
   #chef-photo{
     grid-column: 2 / span 1;
@@ -314,7 +343,18 @@ footer > section{
   }
 }
 @media only screen and (max-width: 767px) {
-
+  .cards-container{
+    grid-column: 2/ span 2;
+    row-gap: 5%;
+  }
+  .card{
+    flex:0 0 100%;
+  }
+  .review-card{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
   .action-button{
     padding: 0 16px;
     white-space: normal;

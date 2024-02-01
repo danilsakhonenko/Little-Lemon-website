@@ -6,7 +6,7 @@ function UserReviewCard(props) {
       ));
 
   return (
-    <article className="review-card">
+    <article className="card review-card">
       <img src={props.imageSrc} className="image profile-image" alt="Dish" />
       <p className="title-text">{props.userName}</p>
       <p>{stars}</p>

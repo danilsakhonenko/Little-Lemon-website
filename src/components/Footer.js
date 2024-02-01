@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../Logo.svg";
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -10,22 +11,22 @@ function Footer() {
         <nav>
           <ul>
             <li>
-              <a className='lead-text' href="#">Home</a>
+              <Link to='/' className='lead-text link' href="#">Home</Link>
             </li>
             <li>
-              <a className='lead-text' href="#">About</a>
+              <Link to='/' className='lead-text link' href="#">About</Link>
             </li>
             <li>
-              <a className='lead-text' href="#">Menu</a>
+              <Link to='/' className='lead-text link' href="#">Menu</Link>
             </li>
             <li>
-              <a className='lead-text' href="#">Reservations</a>
+              <Link to='/booking' className='lead-text link' href="#">Reservations</Link>
             </li>
             <li>
-              <a className='lead-text' href="#">Order Online</a>
+              <Link to='/' className='lead-text link' href="#">Order Online</Link>
             </li>
             <li>
-              <a className='lead-text' href="#">Login</a>
+              <Link to='/' className='lead-text link' href="#">Login</Link>
             </li>
           </ul>
         </nav>
@@ -49,13 +50,13 @@ function Footer() {
         <nav>
           <ul>
             <li>
-              <a className='lead-text' href="#">Instagram</a>
+              <a className='lead-text link' href="#">Instagram</a>
             </li>
             <li>
-              <a className='lead-text' href="#">Twitter</a>
+              <a className='lead-text link' href="#">Twitter</a>
             </li>
             <li>
-              <a className='lead-text' href="#">Facebook</a>
+              <a className='lead-text link' href="#">Facebook</a>
             </li>
           </ul>
         </nav>

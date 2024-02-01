@@ -1,12 +1,12 @@
 import React from 'react'
-import Navigation from './Navigation'
+import NavBar from './NavBar'
 import Logo from '../Logo.svg';
 
 function Header() {
   return (
     <header className='container'>
         <img src={Logo} className='logo' alt='Company logo'/>
-        <Navigation/>
+        <NavBar/>
     </header>
   )
 }
