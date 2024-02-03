@@ -1,9 +1,8 @@
 import React from "react";
-import PreviewPhoto from "../restauranfood.jpg";
-import ActionButton from "./ActionButton";
-import chefPhotoA from "../Mario and Adrian a.jpg";
-import chefPhotoB from "../Mario and Adrian b.jpg";
-import chefPhoto from "../restaurant chef.jpg";
+import PreviewPhoto from "../images/restauranfood.jpg";
+import chefPhotoA from "../images/Mario and Adrian a.jpg";
+import chefPhotoB from "../images/Mario and Adrian b.jpg";
+import chefPhoto from "../images/restaurant chef.jpg";
 import CardsContainer from "./CardsContainer";
 import SpecialsList from './SpecialsList';
 import ReviewsList from "./ReviewsList";
@@ -26,7 +25,6 @@ function HomePage() {
         <div id="white-space"></div>
         <img
           src={PreviewPhoto}
-          className="image"
           id="preview-photo"
           alt="Preview of the food"
         />
@@ -54,21 +52,18 @@ function HomePage() {
         </div>
         <img
           src={chefPhotoA}
-          className="image"
           id="chef-photo-a"
-          alt="Preview of the food"
+          alt="Restaurant chefs"
         />
         <img
           src={chefPhoto}
-          className="image"
           id="chef-photo"
-          alt="Preview of the food"
+          alt="Restaurant chef"
         />
         <img
           src={chefPhotoB}
-          className="image"
           id="chef-photo-b"
-          alt="Preview of the food"
+          alt="Restaurant chefs"
         />
       </section>
     </main>

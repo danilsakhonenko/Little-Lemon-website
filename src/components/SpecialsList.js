@@ -1,8 +1,8 @@
 import React from "react";
 import DishCard from "./DishCard";
-import GreekSaladImg from "../greek salad.jpg";
-import BruchettaImg from "../bruchetta.png";
-import LemonDessertImg from "../lemon dessert.jpg";
+import GreekSaladImg from "../images/greek salad.jpg";
+import BruchettaImg from "../images/bruchetta.png";
+import LemonDessertImg from "../images/lemon dessert.jpg";
 
 const SpecialsList = ({ children }) => {
   let lorem =

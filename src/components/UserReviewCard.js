@@ -7,7 +7,7 @@ function UserReviewCard(props) {
 
   return (
     <article className="card review-card">
-      <img src={props.imageSrc} className="image profile-image" alt="Dish" />
+      <img src={props.imageSrc} className="profile-image" alt="Dish" />
       <p className="title-text">{props.userName}</p>
       <p>{stars}</p>
       <p className="paragraph-text user-comment overflow-text">{props.comment}</p>

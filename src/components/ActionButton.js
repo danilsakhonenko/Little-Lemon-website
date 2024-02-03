@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 
 function ActionButton(props) {
   return (
-      <button
-        className="action-button lead-text" type={props.type} id="props.id">
-        {props.label}
-      </button>
+      <input value={props.value} className="action-button lead-text" type={props.type} id="props.id"/>
   );
 }
 

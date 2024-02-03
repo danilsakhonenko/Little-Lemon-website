@@ -3,7 +3,7 @@ import React from 'react'
 function DishCard(props) {
   return (
     <article className='card'>
-        <img src={props.imageSrc} className='dish-image image' alt='Dish'/>
+        <img src={props.imageSrc} className='dish-image' alt='Dish'/>
         <div className='dish-info'>
           <h3 className='title-text'>{props.name}</h3>
           <h3 className='title-text price'>${props.price}</h3>

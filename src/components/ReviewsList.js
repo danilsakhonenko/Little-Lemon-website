@@ -1,5 +1,5 @@
 import React from "react";
-import UserAvatar from '../UserAvatar.png'
+import UserAvatar from '../images/UserAvatar.png'
 import UserReviewCard from './UserReviewCard';
 
 const ReviewsList = ({ children }) => {
