@@ -3,17 +3,30 @@ import ActionButton from "./ActionButton";
 
 function BookingForm(props) {
   const [guests, setGuest] = useState(1);
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState();
+  const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
+  const [time, setTime] = useState("select");
   const [occasion, setOccasion] = useState("");
-  
-  const handleSubmit=(e)=>{
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submited!");
-  }
-  console.log(props.timesState);
+    props.submitForm({
+      guests: guests,
+      date: date,
+      time: time,
+      occasion: occasion,
+    });
+  };
+
+  const handleDateChange = (e) => {
+    setDate(e.target.value);
+    props.dispatch({ type: "updateDate", date: e.target.value });
+    setTime("select");
+  };
+
+  const isDisabled = 1 > guests > 8 || time === "select" || occasion === "";
   return (
     <form onSubmit={handleSubmit} className="form">
+      <h2>Your reservation details</h2>
       <label className="lead-text" htmlFor="guests">
         Number of guests
       </label>
@@ -34,16 +47,24 @@ function BookingForm(props) {
         type="date"
         id="res-date"
         value={date}
-        onChange={(e) => {setDate(e.target.value);
-          props.dispatchDate({type: e.target.value});
-        }}
+        onChange={handleDateChange}
       />
       <label className="lead-text" htmlFor="res-time">
         Available Times
       </label>
-      <select className="input paragraph-text" id="res-time" value={time} onChange={(e)=>{setTime(e.target.value)}}>
-        {props.timesState.times.map((avalTime) => (
-          <option>{avalTime}</option>
+      <select
+        className="input paragraph-text"
+        id="res-time"
+        value={time}
+        onChange={(e) => {
+          setTime(e.target.value);
+        }}
+      >
+        <option key="select" value="select" disabled aria-disabled="true">
+          Select time
+        </option>
+        {props.times.map((avalTime,index) => (
+          <option data-testid={`time-${index}`} key={avalTime}>{avalTime}</option>
         ))}
       </select>
 
@@ -58,12 +79,25 @@ function BookingForm(props) {
           setOccasion(e.target.value);
         }}
       >
-        <option key="default" value="" disabled aria-disabled="true">Select an occasion</option>
-        <option key="birthday" value="birthday">Birthday</option>
-        <option key="anniversary" value="anniversary">Anniversary</option>
-        <option key="other" value="other">Other</option>
+        <option key="default" value="" disabled aria-disabled="true">
+          Select an occasion
+        </option>
+        <option key="birthday" value="birthday">
+          Birthday
+        </option>
+        <option key="anniversary" value="anniversary">
+          Anniversary
+        </option>
+        <option key="other" value="other">
+          Other
+        </option>
       </select>
-      <ActionButton role="button" type="submit" value="Make Your reservation" />
+      <ActionButton
+        disabled={isDisabled}
+        role="button"
+        type="submit"
+        value="Make your reservation"
+      />
     </form>
   );
 }

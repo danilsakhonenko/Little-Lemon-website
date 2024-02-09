@@ -1,43 +1,45 @@
-import React, { useReducer, useState } from "react";
+import React, { useEffect, useReducer} from "react";
 import BookingForm from "./BookingForm";
+import { fetchAPI, submitAPI} from "../api/AvaliableTimes";
+import { useNavigate } from 'react-router-dom';
 
-const unpdateTimes = (state, date) => {
-  if (date.type === "2024-02-02")
-    return {
-      times: [
-        "11:30",
-        "13:00",
-        "13:30",
-        "14:30",
-        "15:00",
-        "16:00",
-        "18:00",
-        "20:30",
-      ],
-    };
-    else
-    return {
-      times: [
-        "15:00",
-        "16:00",
-        "18:00",
-        "20:30",
-      ],
-    };
-};
-const initializeTimes = () => {
-  return { times: ["11:30"]};
-};
+function reducer(state, action){
+  switch(action.type){
+    case 'updateDate':
+      return {date:action.date, times: []}
+    case 'updateTimes':
+      return {date:state.date, times: action.avaliableTimes}
+    default:
+      return state;
+
+  }
+}
 
 function BookingPage() {
-  let lorem =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Mauris porta, magna et aliquet tempor, tortor mi iaculis enim, ac tempor ligula nulla tincidunt libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque efficitur posuere.";
-  const [state, dispatch] = useReducer(unpdateTimes, initializeTimes());
+  const [state, dispatch] = useReducer(reducer, { date: new Date().toISOString().split('T')[0] ,times: []});
+  const navigate = useNavigate();
+
+  const updateTimes = (date) => {
+    console.log("update");
+    fetchAPI(date)
+    .then((response)=> dispatch({type: 'updateTimes', avaliableTimes: response}))
+    .catch((error) => {console.log(error); dispatch({type: 'updateTimes', date: date, avaliableTimes: []})});
+  };
+
+  useEffect(()=>{
+    updateTimes(state.date);
+  },[state.date]);
+
+  const submitForm=(formData)=>{
+    submitAPI(formData)
+    .then((response)=>{response && navigate('/booking-confirmation', 
+    {state: { date: formData.date, time: formData.time, guests:formData.guests}});})
+    .catch((error) => {console.log(error)});
+  }
 
   return (
     <main className="container" id="booking">
-      <h2>Your reservation details</h2>
-      <BookingForm timesState={state} dispatchDate={dispatch} />
+      <BookingForm times={state.times} dispatch={dispatch} submitForm={submitForm}/>
     </main>
   );
 }

@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700;800&family=Markazi+Text&display=swap");
+/*to-do:
+1.separate classes for grid and flex containers*/
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +19,7 @@ body {
 }
 #root {
   display: grid;
-  grid-template-rows: auto auto auto; /*need to be dynamic somehow*/
+  grid-template-rows: auto auto auto;
   grid-template-areas:
     "header"
     "main"
@@ -81,6 +83,10 @@ h2 {
   justify-content: center;
   align-items: center;
   white-space: nowrap;
+}
+.action-button:disabled {
+  background-color: var(--grey);
+  cursor: not-allowed;
 }
 .container {
   display: grid;
@@ -296,7 +302,7 @@ footer > section {
   grid-column: 4 / span 6;
   row-gap: 20px;
 }
-form > *:nth-child(even) {
+form > *:nth-child(odd) {
   margin-bottom: 20px;
 }
 .input {
@@ -304,6 +310,21 @@ form > *:nth-child(even) {
   background-color: var(--grey);
   border: 1px solid var(--green);
   border-radius: var(--border-rad);
+}
+#confirmation{
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  align-items: center;
+  text-align: center;
+  grid-column: 5 / span 4;
+  background-color: var(--grey);
+  border-radius: var(--border-rad);
+  padding: 20px;
+  overflow: hidden;
+}
+#smile-img{
+  width: 250px;
 }
 @media only screen and (max-width: 1199px) {
   .container {
@@ -329,9 +350,10 @@ form > *:nth-child(even) {
   }
   .nav-list {
     max-height: 0;
+    display: none;
     flex-direction: column;
     align-items: center;
-    transition: max-height 0.2s ease-out;
+    transition: max-height 0.2s ease-out; /*oppacity 0 ?*/
   }
   .nav-list.open {
     display: flex;
@@ -395,6 +417,13 @@ form > *:nth-child(even) {
   .form {
     grid-column: 2 / span 2;
     row-gap: 20px;
+  }
+  #confirmation{
+    grid-column: 1 / span 4;
+    margin: 0 40px;
+  }
+  #smile-img{
+    width: 128px;
   }
 }
 @media only screen and (max-width: 767px) {
