@@ -3,13 +3,9 @@ import {
   screen,
   fireEvent,
   waitFor,
-  act,
-  queryByRole,
-  findByRole,
 } from "@testing-library/react";
-import BookingPage from "./components/BookingPage";
-import { BrowserRouter, MemoryRouter } from "react-router-dom";
-import * as router from 'react-router'
+import BookingPage from "./components/BookingPage/BookingPage";
+import { BrowserRouter } from "react-router-dom";
 
 const MockBookingPage = () => {
   return (

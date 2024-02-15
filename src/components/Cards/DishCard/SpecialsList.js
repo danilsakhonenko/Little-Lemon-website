@@ -1,11 +1,11 @@
 import React from "react";
 import DishCard from "./DishCard";
-import GreekSaladImg from "../images/greek salad.jpg";
-import BruchettaImg from "../images/bruchetta.png";
-import SalmonImg from "../images/salmon.jpg"
-import CaesarSaladImg from "../images/caesar salad.jpg"
-import TiramisuImg from "../images/Tiramisu.jpg"
-import LemonDessertImg from "../images/lemon dessert.jpg";
+import GreekSaladImg from "../../../images/greek salad.jpg";
+import BruchettaImg from "../../../images/bruchetta.png";
+import SalmonImg from "../../../images/salmon.jpg"
+import CaesarSaladImg from "../../../images/caesar salad.jpg"
+import TiramisuImg from "../../../images/Tiramisu.jpg"
+import LemonDessertImg from "../../../images/lemon dessert.jpg";
 
 const SpecialsList = () => {
   const dishesData = [

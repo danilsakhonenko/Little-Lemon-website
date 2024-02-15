@@ -1,10 +1,11 @@
 import React from "react";
-import Logo from "../images/logo.svg";
+import Logo from "../../images/logo.svg";
 import { NavLink } from 'react-router-dom';
+import styles from './Footer.module.css'
 
 function Footer() {
   return (
-    <footer className="container">
+    <footer className={`${styles.footer} container`}>
       <img src={Logo} className="logo" alt="Company logo"/>
       <section>
         <h3 className='title-text'>Doormat Navigation</h3>

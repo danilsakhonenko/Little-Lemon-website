@@ -1,10 +1,10 @@
 import "./App.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import {Routes, Route} from 'react-router-dom'
-import HomePage from "./components/HomePage";
-import BookingPage from './components/BookingPage'
-import ConfirmedBooking from "./components/ConfirmedBooking";
+import HomePage from "./components/HomePage/HomePage";
+import BookingPage from './components/BookingPage/BookingPage'
+import ConfirmedBooking from "./components/Confirmation/ConfirmedBooking";
 
 function App() {
   return (

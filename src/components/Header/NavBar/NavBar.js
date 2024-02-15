@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import styles from './NavBar.module.css'
 
 function NavBar() {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -8,9 +9,9 @@ function NavBar() {
   };
   return (
     <>
-      <button onClick={toggleMenu} id="hamburger-button" />
+      <button onClick={toggleMenu} className={styles.hamburgerButton}/>
       <nav>
-        <ul className={`nav-list ${isMenuOpen ? "open" : ""}`}>
+        <ul className={`${styles.navList} ${isMenuOpen ? styles.open : ""}`}>
           <li>
             <NavLink to="/" activeClassName="active" className="title-text link">
               Home

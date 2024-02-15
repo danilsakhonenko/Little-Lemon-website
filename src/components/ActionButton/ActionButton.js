@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import styles from './ActionButton.module.css';
 
 function ActionButton(props) {
-  const styleClass = "action-button lead-text";
+  const styleClass = `${props.style} ${styles.button} lead-text`;
   return props.link ? (
     <Link
       to={props.link}

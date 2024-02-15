@@ -1,7 +1,8 @@
 import React from "react";
-import ActionButton from "./ActionButton";
+import ActionButton from "../../ActionButton/ActionButton";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import styles from './BookingForm.module.css'
 
 function BookingForm(props) {
   const formik = useFormik({
@@ -55,13 +56,13 @@ function BookingForm(props) {
     props.dispatch({ type: "updateDate", date: e.target.value });
   };
   return (
-    <form onSubmit={handleSubmit} className="form">
+    <form onSubmit={handleSubmit} className={styles.form}>
       <h2>Your reservation details</h2>
       <label className="lead-text" htmlFor="email">
         Your E-mail
       </label>
       <input
-        className="input paragraph-text"
+        className={`${styles.input} paragraph-text`}
         autoComplete="email"
         placeholder="example@mail.com"
         autoFocus
@@ -72,8 +73,8 @@ function BookingForm(props) {
         onChange={formik.handleChange}
       />
       <div
-        className={`error-message ${
-          formik.touched.email && formik.errors.email ? "" : "invisible"
+        className={`${styles.error} ${
+          formik.touched.email && formik.errors.email ? "" : styles.invisible
         }`}
       >
         {formik.errors.email}
@@ -82,7 +83,7 @@ function BookingForm(props) {
         Number of guests
       </label>
       <input
-        className="input paragraph-text"
+        className={`${styles.input} paragraph-text`}
         id="guests"
         name="guests"
         type="number"
@@ -92,8 +93,8 @@ function BookingForm(props) {
         onChange={formik.handleChange}
       />
       <div
-        className={`error-message ${
-          formik.touched.guests && formik.errors.guests ? "" : "invisible"
+        className={`${styles.error} ${
+          formik.touched.guests && formik.errors.guests ? "" : styles.invisible
         }`}
       >
         {formik.errors.guests}
@@ -102,7 +103,7 @@ function BookingForm(props) {
         Date
       </label>
       <input
-        className="input paragraph-text"
+        className={`${styles.input} paragraph-text`}
         id="date"
         name="date"
         type="date"
@@ -110,8 +111,8 @@ function BookingForm(props) {
         onChange={handleDateChange}
       />
       <div
-        className={`error-message ${
-          formik.touched.date && formik.errors.date ? "" : "invisible"
+        className={`${styles.error} ${
+          formik.touched.date && formik.errors.date ? "" : styles.invisible
         }`}
       >
         {formik.errors.date}
@@ -120,7 +121,7 @@ function BookingForm(props) {
         Available Times
       </label>
       <select
-        className="input paragraph-text"
+        className={`${styles.input} paragraph-text`}
         id="time"
         name="time"
         {...formik.getFieldProps("time")}
@@ -141,8 +142,8 @@ function BookingForm(props) {
         ))}
       </select>
       <div
-        className={`error-message ${
-          formik.touched.time && formik.errors.time ? "" : "invisible"
+        className={`${styles.error} ${
+          formik.touched.time && formik.errors.time ? "" : styles.invisible
         }`}
       >
         {formik.errors.time}
@@ -151,7 +152,7 @@ function BookingForm(props) {
         Occasion
       </label>
       <select
-        className="input paragraph-text"
+        className={`${styles.input} paragraph-text`}
         id="occasion"
         name="occasion"
         {...formik.getFieldProps("occasion")}
@@ -176,8 +177,8 @@ function BookingForm(props) {
         </option>
       </select>
       <div
-        className={`error-message ${
-          formik.touched.occasion && formik.errors.occasion ? "" : "invisible"
+        className={`${styles.error} ${
+          formik.touched.occasion && formik.errors.occasion ? "" : styles.invisible
         }`}
       >
         {formik.errors.occasion}

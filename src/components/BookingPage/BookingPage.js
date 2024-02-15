@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer} from "react";
-import BookingForm from "./BookingForm";
-import { fetchAPI, submitAPI} from "../api/AvaliableTimes";
+import BookingForm from './Form/BookingForm';
+import { fetchAPI, submitAPI} from "../../api/AvaliableTimes";
 import { useNavigate } from 'react-router-dom';
 
 function reducer(state, action){
@@ -38,7 +38,7 @@ function BookingPage() {
   }
 
   return (
-    <main className="container" id="booking">
+    <main className="container">
       <BookingForm times={state.times} dispatch={dispatch} submitForm={submitForm}/>
     </main>
   );

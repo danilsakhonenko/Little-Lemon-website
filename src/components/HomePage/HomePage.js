@@ -1,12 +1,13 @@
 import React from "react";
-import ActionButton from "./ActionButton";
-import PreviewPhoto from "../images/restauranfood.jpg";
-import chefPhotoA from "../images/Mario and Adrian a.jpg";
-import chefPhotoB from "../images/Mario and Adrian b.jpg";
-import chefPhoto from "../images/restaurant chef.jpg";
-import CardsContainer from "./CardsContainer";
-import SpecialsList from './SpecialsList';
-import ReviewsList from "./ReviewsList";
+import ActionButton from "../ActionButton/ActionButton";
+import PreviewPhoto from "../../images/restauranfood.jpg";
+import chefPhotoA from "../../images/Mario and Adrian a.jpg";
+import chefPhotoB from "../../images/Mario and Adrian b.jpg";
+import chefPhoto from "../../images/restaurant chef.jpg";
+import CardsContainer from "../Cards/CardsContainer";
+import SpecialsList from '../Cards/DishCard/SpecialsList';
+import ReviewsList from "../Cards/UserReviewCard/ReviewsList";
+import styles from './HomePage.module.css'
 
 function HomePage() {
   const shortRestDescription =
@@ -14,35 +15,35 @@ function HomePage() {
   const longRestDescription1 = `Family owned Mediterranean restaurant focused on traditional recipes served with a modern twist.Step into our cozy dining space and embark on a culinary journey through the heart of the Mediterranean.`;
   const longRestDescription2 = `Our commitment to quality ingredients and meticulous preparation shines through in every bite. Whether you're joining us for a casual lunch with friends or a romantic dinner for two, our warm hospitality and delectable cuisine will make you feel right at home.`;
   return (
-    <main id='main'>
-      <article id="hero-section" className="container">
+    <main className={styles.main}>
+      <article className={`${styles.hero} container`}>
         <div className="text-block">
           <h1>Little Lemon</h1>
           <h2 className="white">Chicago</h2>
           <p className="lead-text white">{shortRestDescription}</p>
         </div>
-        <ActionButton link='/booking' id='reserve-button' disabled='false' role="button" type="button" value="Reserve a table" />
-        <div id="white-space"></div>
+        <ActionButton link='/booking' style={styles.reserveButton} disabled='false' role="button" type="button" value="Reserve a table" />
+        <div className={styles.space}></div>
         <img
           src={PreviewPhoto}
-          id="preview-photo"
+          className={styles.preview}
           alt="Preview of the food"
         />
       </article>
-      <section id="highlights" className="container">
+      <section className={`${styles.highlights} container`}>
         <h2>This weeks specials!</h2>
-        <ActionButton link='/' id='menu-button' disabled='false' role="button" type="button" value="Online Menu" />
+        <ActionButton link='/' style={styles.menuButton} disabled='false' role="button" type="button" value="Online Menu" />
         <CardsContainer>
           <SpecialsList/>
         </CardsContainer>
       </section>
-      <section id="testimonials" className="container">
+      <section className={`${styles.testimonials} container`}>
         <h2 className="white">Testimonials</h2>
         <CardsContainer>
           <ReviewsList/>
         </CardsContainer>
       </section>
-      <article id="about" className="container">
+      <article className={`${styles.about} container`}>
         <div className="text-block">
           <h2>Little Lemon</h2>
           <h2>Chicago</h2>
@@ -50,17 +51,17 @@ function HomePage() {
         </div>
         <img
           src={chefPhotoA}
-          id="chef-photo-a"
+          className={styles.chefA}
           alt="Restaurant chefs"
         />
         <img
           src={chefPhoto}
-          id="chef-photo"
+          className={styles.chef}
           alt="Restaurant chef"
         />
         <img
           src={chefPhotoB}
-          id="chef-photo-b"
+          className={styles.chefB}
           alt="Restaurant chefs"
         />
       </article>
