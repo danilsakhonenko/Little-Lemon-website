@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -12,34 +12,34 @@ function NavBar() {
       <nav>
         <ul className={`nav-list ${isMenuOpen ? "open" : ""}`}>
           <li>
-            <Link to="/" className="title-text link">
+            <NavLink to="/" activeClassName="active" className="title-text link">
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/" className="title-text link">
+            <NavLink to="/about" activeClassName="active" className="title-text link">
               About
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/" className="title-text link">
+            <NavLink to="/menu" activeClassName="active" className="title-text link">
               Menu
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/booking" className="title-text link">
+            <NavLink to="/booking" activeClassName="active" className="title-text link">
               Reservations
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/" className="title-text link">
+            <NavLink to="/order" activeClassName="active" className="title-text link">
               Order Online
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/" className="title-text link">
+            <NavLink to="/login" activeClassName="active" className="title-text link">
               Login
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>

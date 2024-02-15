@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../images/logo.svg";
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -11,22 +11,22 @@ function Footer() {
         <nav>
           <ul>
             <li>
-              <Link to='/' className='lead-text link' href="#">Home</Link>
+              <NavLink to='/' activeClassName='active' className='lead-text link' href="#">Home</NavLink>
             </li>
             <li>
-              <Link to='/' className='lead-text link' href="#">About</Link>
+              <NavLink to='/about' activeClassName='active' className='lead-text link' href="#">About</NavLink>
             </li>
             <li>
-              <Link to='/' className='lead-text link' href="#">Menu</Link>
+              <NavLink to='menu' activeClassName='active' className='lead-text link' href="#">Menu</NavLink>
             </li>
             <li>
-              <Link to='/booking' className='lead-text link' href="#">Reservations</Link>
+              <NavLink to='/booking' activeClassName='active' className='lead-text link' href="#">Reservations</NavLink>
             </li>
             <li>
-              <Link to='/' className='lead-text link' href="#">Order Online</Link>
+              <NavLink to='/order' activeClassName='active' className='lead-text link' href="#">Order Online</NavLink>
             </li>
             <li>
-              <Link to='/' className='lead-text link' href="#">Login</Link>
+              <NavLink to='/login' activeClassName='active' className='lead-text link' href="#">Login</NavLink>
             </li>
           </ul>
         </nav>
@@ -50,13 +50,13 @@ function Footer() {
         <nav>
           <ul>
             <li>
-              <a className='lead-text link' href="#">Instagram</a>
+              <a className='lead-text link' href="/">Instagram</a>
             </li>
             <li>
-              <a className='lead-text link' href="#">Twitter</a>
+              <a className='lead-text link' href="/">Twitter</a>
             </li>
             <li>
-              <a className='lead-text link' href="#">Facebook</a>
+              <a className='lead-text link' href="/">Facebook</a>
             </li>
           </ul>
         </nav>

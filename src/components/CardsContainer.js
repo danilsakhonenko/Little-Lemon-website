@@ -2,9 +2,9 @@ import React from "react";
 
 const CardsContainer = ({ children }) => {
   return (
-    <div className="cards-container">
+    <section className="cards-container">
       {children}
-    </div>
+    </section>
   );
 }
 

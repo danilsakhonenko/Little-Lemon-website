@@ -33,7 +33,7 @@ function BookingPage() {
   const submitForm=(formData)=>{
     submitAPI(formData)
     .then((response)=>{response && navigate('/booking-confirmation', 
-    {state: { date: formData.date, time: formData.time, guests:formData.guests}});})
+    {state: { date: formData.date, time: formData.time, guests:formData.guests, email:formData.email}});})
     .catch((error) => {console.log(error)});
   }
 
