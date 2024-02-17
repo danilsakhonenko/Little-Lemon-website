@@ -51,7 +51,6 @@ function BookingForm(props) {
     e.preventDefault();
     formik.handleSubmit(e);
   };
-  console.log(formik.errors.email && formik.touched.email);
   const handleDateChange = (e) => {
     formik.setFieldValue("time", "selectTime");
     formik.setFieldTouched("time", false);
