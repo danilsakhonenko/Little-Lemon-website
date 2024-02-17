@@ -10,23 +10,13 @@
   border: 1px solid var(--green);
   border-radius: var(--border-rad);
 }
-.error {
-  display: flex;
-  height: 40px;
-  align-items: center;
-  border-radius: var(--border-rad);
-  border: 1px RGB(255, 101, 80) solid;
-  padding: 0 20px;
-  background-color: RGBA(255, 101, 80, 0.4);
-  transition: 0.2s ease-out;
+[aria-invalid="true"] {
+  outline: 1px solid RGB(255, 101, 80);
 }
-.invisible{
-    opacity: 0%;
-    height: 0px;
+
+@media only screen and (max-width: 1199px) {
+  .form {
+    grid-column: 2 / span 2;
+    row-gap: 20px;
   }
-  @media only screen and (max-width: 1199px) {
-    .form {
-      grid-column: 2 / span 2;
-      row-gap: 20px;
-    }
-  }
+}

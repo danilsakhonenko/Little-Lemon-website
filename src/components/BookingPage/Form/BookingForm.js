@@ -1,8 +1,9 @@
 import React from "react";
 import ActionButton from "../../ActionButton/ActionButton";
+import ErrorMessage from './ErrorMessage'
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import styles from './BookingForm.module.css'
+import styles from "./BookingForm.module.css";
 
 function BookingForm(props) {
   const formik = useFormik({
@@ -24,7 +25,9 @@ function BookingForm(props) {
     },
     validateOnMount: true,
     validationSchema: Yup.object({
-      email: Yup.string().email("Invalid E-mail format.").required("This field is required."),
+      email: Yup.string()
+        .email("Invalid E-mail format.")
+        .required("This field is required."),
       guests: Yup.number()
         .min(1, "The number of guests must be greater than 0.")
         .max(10, "The number of guests should be no more than 10.")
@@ -48,7 +51,7 @@ function BookingForm(props) {
     e.preventDefault();
     formik.handleSubmit(e);
   };
-
+  console.log(formik.errors.email && formik.touched.email);
   const handleDateChange = (e) => {
     formik.setFieldValue("time", "selectTime");
     formik.setFieldTouched("time", false);
@@ -71,14 +74,10 @@ function BookingForm(props) {
         type="text"
         {...formik.getFieldProps("email")}
         onChange={formik.handleChange}
+        aria-invalid={formik.errors.email && formik.touched.email}
+        aria-errormessage="email_err"
       />
-      <div
-        className={`${styles.error} ${
-          formik.touched.email && formik.errors.email ? "" : styles.invisible
-        }`}
-      >
-        {formik.errors.email}
-      </div>
+      <ErrorMessage id='email_err' error={formik.errors.email}/>
       <label className="lead-text" htmlFor="guests">
         Number of guests
       </label>
@@ -91,14 +90,10 @@ function BookingForm(props) {
         max="10"
         {...formik.getFieldProps("guests")}
         onChange={formik.handleChange}
+        aria-invalid={formik.errors.guests && formik.touched.guests}
+        aria-errormessage="guests_err"
       />
-      <div
-        className={`${styles.error} ${
-          formik.touched.guests && formik.errors.guests ? "" : styles.invisible
-        }`}
-      >
-        {formik.errors.guests}
-      </div>
+      <ErrorMessage id='guests_err' error={formik.errors.guests}/>
       <label className="lead-text" htmlFor="date">
         Date
       </label>
@@ -109,14 +104,10 @@ function BookingForm(props) {
         type="date"
         {...formik.getFieldProps("date")}
         onChange={handleDateChange}
+        aria-invalid={formik.errors.date && formik.touched.date}
+        aria-errormessage="date_err"
       />
-      <div
-        className={`${styles.error} ${
-          formik.touched.date && formik.errors.date ? "" : styles.invisible
-        }`}
-      >
-        {formik.errors.date}
-      </div>
+      <ErrorMessage id='date_err' error={formik.errors.date}/>
       <label className="lead-text" htmlFor="time">
         Available Times
       </label>
@@ -126,6 +117,8 @@ function BookingForm(props) {
         name="time"
         {...formik.getFieldProps("time")}
         onChange={formik.handleChange}
+        aria-invalid={formik.errors.time && formik.touched.time}
+        aria-errormessage="time_err"
       >
         <option
           key="selectTime"
@@ -133,7 +126,7 @@ function BookingForm(props) {
           disabled
           aria-disabled="true"
         >
-          {props.times.length ? "Select time": "No available times"}
+          {props.times.length ? "Select time" : "No available times"}
         </option>
         {props.times.map((avalTime, index) => (
           <option data-testid={`time-${index}`} key={avalTime}>
@@ -141,13 +134,7 @@ function BookingForm(props) {
           </option>
         ))}
       </select>
-      <div
-        className={`${styles.error} ${
-          formik.touched.time && formik.errors.time ? "" : styles.invisible
-        }`}
-      >
-        {formik.errors.time}
-      </div>
+      <ErrorMessage id='time_err' error={formik.errors.time}/>
       <label className="lead-text" htmlFor="occasion">
         Occasion
       </label>
@@ -157,6 +144,8 @@ function BookingForm(props) {
         name="occasion"
         {...formik.getFieldProps("occasion")}
         onChange={formik.handleChange}
+        aria-invalid={formik.errors.occasion && formik.touched.occasion}
+        aria-errormessage="occasion_err"
       >
         <option
           key="selectOccasion"
@@ -176,13 +165,7 @@ function BookingForm(props) {
           Other
         </option>
       </select>
-      <div
-        className={`${styles.error} ${
-          formik.touched.occasion && formik.errors.occasion ? "" : styles.invisible
-        }`}
-      >
-        {formik.errors.occasion}
-      </div>
+      <ErrorMessage id='occasion_err' error={formik.errors.occasion}/>
       <ActionButton
         disabled={!formik.isValid}
         role="button"
