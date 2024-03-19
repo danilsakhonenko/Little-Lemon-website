@@ -12,11 +12,19 @@
   --green: #495e57;
   --grey: #edefee;
   --peach: #ee9972;
+  --lead-text: normal normal 500 18pt "Karla", sans-serif;
+  --paragraph-text: normal normal 400 16pt/1.5 "Karla", sans-serif;
+  --title-text: normal normal 700 18pt "Karla", sans-serif;
 }
 body {
   font-family: var(--font-karla);
 }
-#root {
+a {
+  font: var(--lead-text);
+  text-decoration: none;
+  color: black;
+}
+/*#root {
   display: grid;
   grid-template-rows: auto auto auto;
   grid-template-areas:
@@ -69,16 +77,16 @@ h2 {
 }
 .white {
   color: white;
-}
+}*/
 .container {
   display: grid;
   grid-template-columns: repeat(12, [col-start] 1fr);
   justify-items: stretch;
   align-items: center;
-  padding: 48px 0;
+  padding: 40px 0;
   row-gap: 40px;
 }
-.text-block {
+/*.text-block {
   grid-column: 3 / span 3;
 }
 ul {
@@ -110,8 +118,8 @@ img {
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   white-space: normal;
-}
-::-webkit-scrollbar {
+}*/
+/*::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-thumb {
@@ -135,12 +143,12 @@ img {
 }
 ::-moz-scrollbar-thumb:active {
   background-color: var(--peach);
-}
+}*/
 @media only screen and (max-width: 1199px) {
   .container {
     grid-template-columns: repeat(4, [col-start] 1fr);
   }
-  h2 {
+  /*h2 {
     grid-column: 2 / span 2;
     justify-self: center;
   }
@@ -156,10 +164,10 @@ img {
   }
   .text-block {
     grid-column: 2 / span 2;
-  }
+  }*/
 }
 @media only screen and (max-width: 767px) {
-  h1 {
+  /*h1 {
     white-space: normal;
   }
   h2 {
@@ -167,5 +175,5 @@ img {
   }
   .card {
     flex: 0 0 100%;
-  }
+  }*/
 }

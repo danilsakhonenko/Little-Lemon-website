@@ -1,0 +1,4 @@
+.image {
+  border-radius: var(--border-rad);
+  object-fit: cover;
+}

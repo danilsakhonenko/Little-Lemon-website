@@ -1,0 +1,15 @@
+.h1 {
+  font: normal normal 500 64pt/0.8 var(--font-markazi);
+  color: var(--yellow);
+  line-height: 0.8;
+  white-space: nowrap;
+}
+.h2 {
+  font: normal normal 400 40pt var(--font-markazi);
+  white-space: nowrap;
+}
+@media only screen and (max-width: 767px) {
+  .h1, .h2 {
+    white-space: normal;
+  }
+}

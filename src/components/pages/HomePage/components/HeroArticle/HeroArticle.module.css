@@ -1,0 +1,21 @@
+.heroArticle {
+  background-color: var(--green);
+  padding-bottom: 0;
+}
+.h2,
+.paragraph {
+  color: white;
+}
+.paragraph {
+  font: var(--lead-text);
+}
+.reserveButton {
+  margin-top: 40px;
+  width: 50%;
+}
+@media only screen and (max-width: 1199px) {
+    
+}
+@media only screen and (max-width: 767px) {
+
+}

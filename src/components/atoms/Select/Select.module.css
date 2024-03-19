@@ -1,0 +1,10 @@
+.select{
+    font: var(--paragraph-text);
+    padding: 20px 20px;
+    background-color: var(--grey);
+    border: 1px solid var(--green);
+    border-radius: var(--border-rad);
+}
+[aria-invalid="true"] {
+    outline: 1px solid RGB(255, 101, 80);
+}

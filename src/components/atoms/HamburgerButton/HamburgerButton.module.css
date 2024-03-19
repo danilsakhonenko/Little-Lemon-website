@@ -1,0 +1,7 @@
+.hamburgerButton {
+    width: 35px;
+    height: 25px;
+    border-width: 0px;
+    background-color: inherit;
+    background-image: url("../../../assets/images/hamburgerMenuIcon.svg");
+  }

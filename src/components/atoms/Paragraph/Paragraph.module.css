@@ -1,0 +1,8 @@
+.paragraph {
+  font: var(--paragraph-text);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}

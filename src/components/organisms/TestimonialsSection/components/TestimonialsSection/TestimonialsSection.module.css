@@ -1,0 +1,33 @@
+.section{
+    background-color: var(--green);
+}
+.card{
+    flex: 0 0 31%;
+    height: 100%;
+}
+.heading{
+    color: white;
+    grid-column: 3/span 4;
+}
+.cardsContainer{
+    grid-column: 3/ span 8;
+    column-gap: 3.5%;
+    height: 350px;
+}
+@media only screen and (max-width: 1199px) {
+    .heading{
+        grid-column: 2/span 2;
+    }
+    .cardsContainer{
+        grid-column: 2/ span 2;
+        height: 425px;
+    }
+    .card{
+        flex: 0 0 48.2%;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .card{
+        flex: 0 0 100%;
+    }
+}
