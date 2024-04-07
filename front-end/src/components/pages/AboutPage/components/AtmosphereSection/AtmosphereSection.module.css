@@ -1,0 +1,30 @@
+.image{
+    flex:0 0 48%;
+    height: 100%;
+    width: 48%;
+}
+.text{
+    grid-column: 3/span 8;
+}
+.imagesContainer{
+    grid-column: 3/ span 8;
+    column-gap: 4%;
+    height: 750px;
+}
+@media only screen and (max-width: 1199px) {
+    .text{
+        grid-column: 2/span 2;
+    }
+    .imagesContainer{
+        grid-column: 2/ span 2;
+    }
+    .image{
+        flex: 0 0 100%;
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .imagesContainer{
+        height: 450px;
+    }
+  }

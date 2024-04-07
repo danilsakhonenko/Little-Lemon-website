@@ -1,0 +1,38 @@
+.card {
+  background-color: var(--grey);
+  border-radius: var(--border-rad);
+  display: grid;
+  grid-template-rows: repeat(2, auto) 1fr;
+  grid-template-columns: auto 1fr;
+  padding: 20px;
+  gap: 15px;
+}
+.overflowParagraph{
+  -webkit-line-clamp: 5;
+}
+.profilePic {
+  width: 100px;
+  height: 100px;
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 2;
+}
+.comment {
+  grid-column: 1 / span 2;
+}
+@media only screen and (max-width: 1199px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .overflowParagraph{
+    -webkit-line-clamp: 4;
+  }
+  .userName{
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 767px) {
+
+}

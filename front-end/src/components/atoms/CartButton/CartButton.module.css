@@ -1,0 +1,12 @@
+.button{
+    background: none;
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+    outline: none;
+}
+.image {
+    width: 100%; /* Image width takes up the full width of the button */
+    height: 100%; /* Image height takes up the full height of the button */
+    object-fit: scale-down; /* Ensure the image fits within the button without distortion */
+  }

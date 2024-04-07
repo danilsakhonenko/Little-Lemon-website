@@ -1,0 +1,6 @@
+.childBackground:nth-child(odd){
+  background-color: var(--green);
+}
+.childBackground:nth-child(even){
+  background-color: white;
+}

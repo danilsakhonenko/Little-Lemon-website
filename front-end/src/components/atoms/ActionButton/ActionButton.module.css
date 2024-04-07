@@ -1,0 +1,32 @@
+.button {
+    display: flex;
+    font: var(--lead-text);
+    border-width: 0;
+    border-radius: var(--border-rad);
+    background-color: var(--yellow);
+    cursor: pointer;
+    height: 64px;
+    padding: 0 32px;
+    min-width: fit-content;
+    max-width: 500px;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+  }
+  .button:hover{
+    color: var(--green);
+  }
+  .button:disabled {
+    background-color: var(--grey);
+    cursor: not-allowed;
+    color: #333333;
+  }
+  .button:active{
+    background-color: var(--peach);
+  }
+  @media only screen and (max-width: 767px) {
+    .button {
+      padding: 0 16px;
+      white-space: normal;
+    }
+  }

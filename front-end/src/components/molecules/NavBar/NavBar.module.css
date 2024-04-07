@@ -1,0 +1,21 @@
+  .navBar> ul{
+    display: flex;
+    list-style: none;
+  }
+  .navBar.main > ul{
+    align-items: center;
+  }
+  .navBar.secondary > ul{
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .navBar.main li {
+    text-align: center;
+    padding: 20px 10px;
+    flex-grow: 1;
+  }
+  .navBar.secondary li{
+    padding-bottom: 10px;
+    flex-grow: 1;
+  }
+  

@@ -1,0 +1,8 @@
+.header{
+  justify-items: center;
+  padding: 20px 0;
+}
+.logo {
+  grid-column: 6 / span 2;
+  width: 100%;
+}

@@ -1,1 +1,0 @@
-export {SpecialsSection} from './components/SpecialsSection/SpecialsSection'

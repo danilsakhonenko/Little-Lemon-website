@@ -1,0 +1,39 @@
+.section{
+    grid-template-rows: auto 1fr;
+}
+.heading{
+    grid-column: 3/span 4;
+}
+.loading{
+    margin: auto;
+}
+.button{
+    grid-column: 9/ span 2;
+    justify-self: end;
+    width: 100%;
+}
+.multiPage{
+    grid-column: 3/ span 8;
+    height: 650px;
+}
+@media only screen and (max-width: 1199px) {
+    .heading{
+        grid-column: 2/span 2;
+    }
+    .button{
+        grid-column: 2/ span 1;
+    }
+    .multiPage{
+        grid-column: 2/ span 2;
+        height: 900px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .multiPage{
+        grid-column: 2/ span 2;
+        height: 1000px;
+    }
+    .button{
+        grid-column: 2/ span 2;
+    }
+}

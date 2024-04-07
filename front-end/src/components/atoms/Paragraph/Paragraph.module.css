@@ -1,0 +1,14 @@
+.paragraph {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  word-break: break-all;
+}
+.regular{
+  font: var(--paragraph-text);
+}
+.lead{
+  font: var(--lead-text);
+}

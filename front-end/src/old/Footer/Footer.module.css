@@ -1,0 +1,16 @@
+.footer{
+    grid-area: footer;
+    align-items: start;
+    background-color: var(--grey);
+    justify-items: center;
+  }
+  .footer > section {
+    grid-column: span 2;
+  }
+  @media only screen and (max-width: 1199px) {
+    .footer > section {
+      justify-self: center;
+      grid-column: 2 / span 2;
+    }
+  }
+  

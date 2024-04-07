@@ -1,1 +1,0 @@
-export {UserCommentCard} from './UserCommentCard'

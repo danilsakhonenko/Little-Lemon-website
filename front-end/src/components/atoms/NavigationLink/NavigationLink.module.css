@@ -1,0 +1,25 @@
+.link {
+  text-decoration: none;
+  color:black;
+}
+.link.main{
+  font: var(--title-text);
+  white-space: nowrap;
+}
+.link.secondary{
+  font: var(--lead-text);
+}
+.link:hover {
+  color: var(--yellow);
+}
+.link:active {
+  color: var(--peach);
+}
+.link:global(.active){
+  color: var(--peach);
+}
+@media only screen and (max-width: 767px) {
+  .link {
+    white-space: normal;
+  }
+}

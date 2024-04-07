@@ -1,0 +1,6 @@
+.childSection{
+    grid-column: 1/ span 12;
+}
+.heading{
+    grid-column: 3/span 3;
+}

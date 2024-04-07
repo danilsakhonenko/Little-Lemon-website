@@ -1,0 +1,16 @@
+.error {
+  display: flex;
+  visibility: hidden;
+  height: 0px;
+  align-items: center;
+  border-radius: var(--border-rad);
+  border: 1px RGB(255, 101, 80) solid;
+  padding: 0 20px;
+  background-color: RGBA(255, 101, 80, 0.4);
+  transition: 0.2s ease-out;
+}
+
+[aria-invalid="true"] + .error {
+  visibility: visible;
+  height: 40px;
+}
