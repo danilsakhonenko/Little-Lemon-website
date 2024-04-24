@@ -1,12 +1,16 @@
 import express from "express";
 import mongoose from "mongoose";
-import menuRouter from "./menuRouter.js";
+import Router from "./routes/index.js";
 import fileUpload from "express-fileupload";
 import cors from "cors";
+import errorHandler from "./middlewares/ErrorHandling.js";
+import { config } from 'dotenv';
 
-const PORT = 5000;
+config();
+
 const DB_URL =
-  "mongodb+srv://user:user@cluster0.ay4fv0i.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+  "mongodb+srv://"+process.env.DB_USER+":"+process.env.DB_PASSWORD+
+  "@cluster0.ay4fv0i.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const app = express();
 
 app.use(express.json());
@@ -17,12 +21,13 @@ app.use((req, res, next) => {
 });
 app.use(express.static("static"));
 app.use(fileUpload());
-app.use("/menu", menuRouter);
+app.use("/api", Router);
+app.use(errorHandler)
 
 async function startApp() {
   try {
     await mongoose.connect(DB_URL);
-    app.listen(PORT, () => console.log("Server started on port " + PORT));
+    app.listen(process.env.PORT, () => console.log("Server started on port " + process.env.PORT));
   } catch (e) {
     console.log(e);
   }

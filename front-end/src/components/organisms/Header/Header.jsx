@@ -6,7 +6,7 @@ import styles from "./Header.module.css";
 import { CartButton } from "../../atoms/CartButton";
 import { ActionButton } from "../../atoms/ActionButton";
 
-export const Header = () => {
+export const Header = ({toggleModal}) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
@@ -19,7 +19,7 @@ export const Header = () => {
       />
       <Logo externalClasses={styles.logo}/>
       <NavBar type='main' externalClasses={`${styles.navBar} ${isMenuOpen ? styles.open : ""}`}/>
-      <CartButton externalClasses={styles.cartButton}/>
+      <CartButton externalClasses={styles.cartButton} onClick={toggleModal}/>
       <ActionButton externalClasses={`${styles.logoutButton} ${isMenuOpen ? styles.visible : ""}`} value='Logout' />
     </header>
   );

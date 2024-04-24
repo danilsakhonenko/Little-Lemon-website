@@ -8,14 +8,14 @@
   flex-direction: row;
   gap: 3.5%;
   align-items: center;
-  justify-items: center;
+  justify-content: center;
   height: 90%;
   width: 100%;
 }
 .card{
   height: 100%;
   width: 31%;
-  animation: expansion 0.5s ease forwards;
+  animation: expansion 0.8s ease forwards;
 }
 @keyframes expansion {
   from {
@@ -50,6 +50,7 @@
 @media only screen and (max-width: 1199px) {
   .cardsContainer{
     flex-direction: column;
+    justify-content: start;
   }
   .card{
     width: 100%;

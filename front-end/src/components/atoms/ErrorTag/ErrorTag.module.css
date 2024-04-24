@@ -1,4 +1,4 @@
-.error {
+/* .error {
   font: var(--paragraph-text);
   display: flex;
   visibility: hidden;
@@ -11,7 +11,29 @@
   transition: 0.2s ease-out;
 }
 
-[aria-invalid="true"] + .error {
+/* [aria-invalid="true"] + .error, .error.active {
   visibility: visible;
   height: 40px;
+} */ 
+
+.error{
+  font: var(--paragraph-text);
+  display: flex;
+  height: 40px;
+  align-items: center;
+  border-radius: var(--border-rad);
+  border: 1px RGB(255, 101, 80) solid;
+  padding: 0 20px;
+  background-color: RGBA(255, 101, 80, 0.4);
+  animation: expansion 0.3s ease forwards;
+}
+@keyframes expansion {
+  from {
+    opacity: 0;
+    height: 0px;
+  }
+  to {
+    opacity: 1;
+    height: 40px;
+  }
 }

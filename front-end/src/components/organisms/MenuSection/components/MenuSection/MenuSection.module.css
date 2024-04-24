@@ -4,9 +4,6 @@
 .heading{
     grid-column: 3/span 4;
 }
-.loading{
-    margin: auto;
-}
 .button{
     grid-column: 9/ span 2;
     justify-self: end;

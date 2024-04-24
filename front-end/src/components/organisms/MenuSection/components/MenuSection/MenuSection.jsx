@@ -6,6 +6,7 @@ import { useFetching } from "../../../../../hooks/useFetching";
 import { ActionButton } from "../../../../atoms/ActionButton";
 import MenuService from "../../api/MenuService";
 import styles from "./MenuSection.module.css";
+import { Loader } from "../../../../atoms/Loader";
 
 export const MenuSection = ({ externalStyles, heading, category, button }) => {
   const styleClass = [
@@ -16,12 +17,13 @@ export const MenuSection = ({ externalStyles, heading, category, button }) => {
   const [dishesData, setDishesData] = useState({dishes:[], currentIndexes:[]});
   const [totalCount, setTotalCount] = useState(0);
   const [fetchDishes, isLoading, error] = useFetching(async (page, limit) => {
+    const indexes= [(page - 1) * limit, page*limit]
     if (!totalCount || dishesData.dishes.length != totalCount) {
       const response = await MenuService.getByCategory(category, page, limit);
-      setDishesData({dishes: [...dishesData.dishes, ...response.data], currentIndexes: [(page - 1) * limit, page*limit]});
+      setDishesData({dishes: [...dishesData.dishes, ...response.data], currentIndexes: indexes});
       setTotalCount(response.headers["x-total-count"]);
     } else {
-      setDishesData({...dishesData, currentIndexes: [(page - 1) * limit, page*limit]});
+      setDishesData({...dishesData, currentIndexes: indexes});
     }
   });
 
@@ -41,20 +43,14 @@ export const MenuSection = ({ externalStyles, heading, category, button }) => {
           value={button.value}
         />
       )}
-      {error && (
-        <Heading level={2} color={externalStyles.textColor}>
-          {error}
-        </Heading>
-      )}
       <MultiPageContainer
         externalClasses={styles.multiPage}
         fetchDishes={fetchDishes}
         totalItems={totalCount}
+        error={error}
       >
         {isLoading ? (
-          <Heading level={2} externalClasses={styles.loading} color={externalStyles.textColor}>
-            Loading...
-          </Heading>
+          <Loader/>
         ) : (
           dishesData.dishes.slice(dishesData.currentIndexes[0],dishesData.currentIndexes[1]).map((dish) => (
             <DishCard

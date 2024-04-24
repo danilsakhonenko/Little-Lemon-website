@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useMemo } from "react";
 import styles from "./MultiPageContainer.module.css";
 import { getPageCount, getPagesArray } from "../utils/pages";
+import { ErrorTag } from "../../../atoms/ErrorTag";
 import nextImg from "../../../../assets/images/next.png";
 import prevImg from "../../../../assets/images/prev.png";
 
@@ -9,9 +10,9 @@ export const MultiPageContainer = ({
   children,
   fetchDishes,
   totalItems,
+  error,
 }) => {
   const styleClass = [styles.section, externalClasses].join(" ");
-  const [mounted, setMounted] = useState(false);
   const [limit, setLimit] = useState(3);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
@@ -22,7 +23,6 @@ export const MultiPageContainer = ({
         await fetchDishes(page, limit);
       }
       fetchData();
-      setMounted(true)
     }
   }, [page]);
 
@@ -41,9 +41,9 @@ export const MultiPageContainer = ({
   let pagesArray = useMemo(() => {
     return getPagesArray(totalPages);
   }, [totalPages]);
-
   return (
     <section className={styleClass}>
+      {error && <ErrorTag>{error}</ErrorTag>}
       <div className={styles.cardsContainer}>
         {React.Children.map(children, (child) => {
           return React.cloneElement(child, { externalClasses: styles.card });

@@ -1,0 +1,19 @@
+.loader{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    width: 125px;
+    height: 125px;
+    background-color: rgba(124, 124, 124, 0.3);
+    animation: rotate 1s infinite linear;
+    border: 3px dashed black;
+    border-radius: 50%;
+}
+@keyframes rotate {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}

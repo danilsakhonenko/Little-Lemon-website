@@ -1,0 +1,10 @@
+.cartItem{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(2, auto);
+}
+.image{
+    grid-row: 1/ span 2;
+    width: 100px;
+    height: 100px;
+}
