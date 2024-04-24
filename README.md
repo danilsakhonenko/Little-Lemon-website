@@ -24,3 +24,4 @@ Back-end:
 - MongoDB
 - Mongoose
 - Express
+- JWT Authentication 
