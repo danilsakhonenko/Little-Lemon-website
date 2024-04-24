@@ -1,14 +1,14 @@
-<h1 align="center"> Booking Form for Little Lemon website </h1>
+<h1 align="center"> Little Lemon website </h1>
 
 <p align="center">
-The little lemon app is the capstone project for Meta's Front-End Developer Certificate on Coursera. <br/>
+The little lemon full-stack application is the capstone project for Meta's Front-End Developer Certificate on Coursera. <br/>
 </p>
 
 <h2>Technologies</h2>
 
 This project was developed with the following technologies:
 
-- JavaScript
+Front-end:
 - React JS
 - Css
 - Yup
@@ -17,3 +17,11 @@ This project was developed with the following technologies:
 - React Testing Library
 - Git
 - Figma
+
+Back-end:
+- Node.js
+- REST Api
+- MongoDB
+- Mongoose
+- Express
+- JWT Authentication 
