@@ -24,4 +24,7 @@ Back-end:
 - MongoDB
 - Mongoose
 - Express
-- JWT Authentication 
+- JWT Authentication
+- 
+<h2>Preview</h2>
+![image alt](https://github.com/danilsakhonenko/Little-Lemon-website/blob/main/preview.jpg?raw=true)
