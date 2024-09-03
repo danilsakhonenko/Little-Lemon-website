@@ -27,4 +27,4 @@ Back-end:
 - JWT Authentication
 
 <h2>Preview</h2>
-![image alt] (https://github.com/danilsakhonenko/Little-Lemon-website/blob/main/preview.jpg)
+![Alt Text](https://github.com/danilsakhonenko/Little-Lemon-website/blob/main/preview.jpg?raw=true)
